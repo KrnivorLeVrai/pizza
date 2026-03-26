@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO de base -->
+    <title>Pizza'Pam Orvault | Pizza Artisanale à Emporter & Pâte Fraîche</title>
+    <meta name="description" content="Découvrez Pizza'Pam à Orvault (170 route de Vannes). Pizzas artisanales à emporter, pâte fraîche pétrie sur place et produits de qualité. Commandez au 02 51 83 00 64.">
+    <meta name="keywords" content="pizzeria Orvault, pizza à emporter Orvault, artisan pizzaïolo Orvault, restaurant Orvault, pizza route de vannes nantes">
+    
+    <!-- Open Graph (Partage Réseaux Sociaux) -->
+    <meta property="og:title" content="Pizza'Pam | Votre Artisan Pizzaïolo à Orvault">
+    <meta property="og:description" content="Pizzas traditionnelles et créatives avec pâte fraîche maison. À emporter à Orvault.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.pizzapam-orvault.fr">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lilita+One&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Quicksand'], script: ['Caveat'], display: ['Lilita One'] },
+                    colors: { pizza: { red: '#d31a22', green: '#269846', blue: '#3b7b8e', cream: '#fdfbf7', yellow: '#f4a261' } },
+                    boxShadow: { 'brutal': '4px 4px 0px 0px rgba(0,0,0,0.8)' }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .price-line { display: flex; align-items: baseline; gap: 8px; }
+        .dots { flex-grow: 1; border-bottom: 2px dotted #ccc; margin-bottom: 5px; }
+        .menu-card { transition: transform 0.2s; }
+        .menu-card:hover { transform: translateY(-2px); }
+        .header-bg { background-image: radial-gradient(#ffffff22 2px, transparent 2px); background-size: 20px 20px; }
+    </style>
+
+    <!-- Données structurées Google (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Pizza'Pam Orvault",
+      "image": "https://www.pizzapam-orvault.fr/logo.png",
+      "@id": "https://www.pizzapam-orvault.fr",
+      "url": "https://www.pizzapam-orvault.fr",
+      "telephone": "+33251830064",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "170 route de Vannes",
+        "addressLocality": "Orvault",
+        "postalCode": "44700",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 47.240723,
+        "longitude": -1.592801
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"],
+          "opens": "11:00",
+          "closes": "21:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Friday", "Saturday"],
+          "opens": "11:00",
+          "closes": "22:00"
+        }
+      ],
+      "servesCuisine": "Pizza",
+      "priceRange": "$$"
+    }
+    </script>
+</head>
+<body class="bg-pizza-cream text-gray-800">
+
+    <!-- Navigation -->
+    <header class="bg-pizza-red text-white sticky top-0 z-50 border-b-4 border-pizza-green shadow-md">
+        <nav class="max-w-6xl mx-auto px-4 h-20 flex justify-between items-center" aria-label="Menu principal">
+            <div class="font-display text-3xl tracking-tighter cursor-pointer" onclick="window.scrollTo(0,0)">PIZZA<span class="text-pizza-green">'</span>PAM</div>
+            <div class="hidden lg:flex gap-8 font-bold">
+                <a href="#traditions" class="hover:text-pizza-yellow transition-colors">Traditions</a>
+                <a href="#terroirs" class="hover:text-pizza-yellow transition-colors">Terroirs</a>
+                <a href="#speciales" class="hover:text-pizza-yellow transition-colors">Spéciales</a>
+                <a href="#desserts" class="hover:text-pizza-yellow transition-colors">Desserts</a>
+            </div>
+            <a href="tel:+33251830064" class="bg-white text-pizza-red px-6 py-2 rounded-full font-bold border-2 border-black shadow-brutal flex items-center gap-2 hover:bg-pizza-yellow transition-all" aria-label="Appeler pour commander">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i> 02 51 83 00 64
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero / En-tête -->
+    <section class="bg-pizza-red text-white py-16 text-center relative header-bg">
+        <div class="relative z-10">
+            <h1 class="font-script text-6xl md:text-7xl mb-2 transform -rotate-2">Pizza'Pam : Artisan Pizzaïolo à Orvault</h1>
+            <p class="font-display text-3xl md:text-5xl uppercase text-pizza-yellow tracking-widest">Pizzas Fraîches à Emporter</p>
+            <div class="mt-8 inline-block bg-pizza-green p-4 rounded-xl border-4 border-black shadow-brutal rotate-1">
+                <p class="font-display text-xl uppercase">Pâte fraîche pétrie sur place chaque jour</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zone de Menu -->
+    <main class="max-w-6xl mx-auto px-4 py-16">
+        
+        <!-- Texte SEO descriptif -->
+        <article class="mb-16 text-center max-w-3xl mx-auto">
+            <h2 class="font-display text-3xl text-pizza-blue mb-4 uppercase">Le goût de l'artisanat près de chez vous</h2>
+            <p class="text-lg leading-relaxed text-gray-700">
+                Située au cœur d'<strong>Orvault</strong>, sur la célèbre route de Vannes, Pizza'Pam vous propose une large sélection de <strong>pizzas artisanales</strong> préparées avec passion. Que vous habitiez à Orvault, Nantes ou Saint-Herblain, venez goûter la différence d'une pâte fraîche maison et d'ingrédients rigoureusement sélectionnés.
+            </p>
+        </article>
+        
+        <!-- Légende des tailles -->
+        <div class="flex justify-center gap-16 mb-16 text-pizza-blue font-display text-2xl border-b-2 border-dashed border-gray-300 pb-4">
+            <div class="text-center"><span class="block text-xs text-gray-500 font-sans uppercase">Petite</span>Ø 29 cm</div>
+            <div class="text-center"><span class="block text-xs text-gray-500 font-sans uppercase">Grande</span>Ø 33 cm</div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            
+            <!-- COLONNE GAUCHE -->
+            <div class="space-y-16">
+                
+                <!-- LES TRADITIONS -->
+                <section id="traditions">
+                    <div class="flex items-center gap-4 mb-8">
+                        <h2 class="font-display text-4xl text-pizza-green shrink-0">Pizzas Traditions</h2>
+                        <div class="h-1 w-full bg-pizza-green opacity-20"></div>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Fromage</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Jambon</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, jambon, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La 4 Saisons</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, champignons de Paris, poivrons, tomates fraîches, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Reine</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, jambon, champignons de Paris, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Paysanne</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, lardons, persillade, crème fraîche, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La 3 fromages</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, parmesan, bleu, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Royale</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, jambon, cœurs d'artichauts, champignons, poivrons, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Spéciale Pizzaïolo</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, jambon, œuf, crème fraîche, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Parisienne</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Fond de crème, jambon, champignons de Paris, poivrons, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Crèmière</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Fond de crème, chèvre, noix, miel, olives, fromage</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- LES TERROIRS -->
+                <section id="terroirs">
+                    <div class="flex items-center gap-4 mb-8">
+                        <h2 class="font-display text-4xl text-pizza-red shrink-0">Recettes Terroirs</h2>
+                        <div class="h-1 w-full bg-pizza-red opacity-20"></div>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Chèvre</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, chèvre, herbes de provence, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">L'Alsacienne</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Fond de crème, lardons, oignons, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Marina</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, thon, anchois, poivrons, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Provençale</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, jambon, tomates fraîches, basilic, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">L'Entre-Deux</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, lardons, bleu, noix, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Campagnarde</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, pommes de terre, poulet, champignons, persillade, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Savoyarde</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, pommes de terre, lardons, reblochon, crème fraîche, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Saumon</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, saumon fumé, ciboulette, crème fraîche, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Bretonne</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, andouille de Guémené, tomates fraîches, cheddar, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Ch'timi</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Fond de crème, lardons, tomates fraîches, maroilles, olives, fromage</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- COLONNE DROITE -->
+            <div class="space-y-16">
+                
+                <!-- LES SPÉCIALES -->
+                <section id="speciales">
+                    <div class="flex items-center gap-4 mb-8">
+                        <h2 class="font-display text-4xl text-pizza-red shrink-0">Pizzas Spéciales</h2>
+                        <div class="h-1 w-full bg-pizza-red opacity-20"></div>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">L'Antillaise</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, jambon, ananas, origan, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Pissaladière</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, tomates fraîches, oignons, anchois, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">L'Orientale</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, merguez, poivrons, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Chorizo</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, chorizo, oignons, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Calzone</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, jambon, œuf, crème fraîche, fromage (Chausson traditionnel)</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Mamamia</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, jambon de pays, mozzarella, basilic, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">L'Indienne</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, poulet, champignons de Paris, oignons, curry, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Pescatore</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, cocktail de fruits de mer, crème fraîche, persillade, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Bolognaise</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Sauce tomate, bolognaise, égrené de bœuf, herbes de provence, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Saveur Kebab</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Fond de crème, poulet kebab, oignons, olives, fromage</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="price-line"><h3 class="font-script text-3xl text-pizza-blue">La Duo</h3><div class="dots"></div><span class="font-bold">XX,XX€</span><span class="font-bold ml-2">XX,XX€</span></div>
+                            <p class="text-sm text-gray-600 font-medium">Panaché de 2 recettes réunies sur une même pizza pour les indécis</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- LES DESSERTS -->
+                <section id="desserts" class="bg-white p-8 rounded-3xl border-4 border-pizza-red shadow-brutal relative overflow-hidden">
+                    <div class="absolute -top-4 -right-4 w-20 h-20 bg-pizza-yellow rotate-12 opacity-20"></div>
+                    <h2 class="font-display text-3xl text-pizza-red mb-6 uppercase tracking-tight">Nos Pizzas Desserts Artisanales</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-script text-3xl text-pizza-blue">La Pomme</h3>
+                            <p class="text-xs text-gray-500 font-bold uppercase">Fond crème, pomme, coulis caramel, cannelle</p>
+                        </div>
+                        <div>
+                            <h3 class="font-script text-3xl text-pizza-blue">La Banane</h3>
+                            <p class="text-xs text-gray-500 font-bold uppercase">Fond crème, banane, sucre, coulis chocolat, coco râpée</p>
+                        </div>
+                        <div>
+                            <h3 class="font-script text-3xl text-pizza-blue">La Poire</h3>
+                            <p class="text-xs text-gray-500 font-bold uppercase">Fond crème, poire, sucre, pépites chocolat, amandes effilées</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 bg-gray-100 p-4 rounded-xl border-2 border-dashed border-gray-300">
+                        <div class="flex justify-between font-bold text-sm">
+                            <span>Croco (20cm)</span> <span class="text-pizza-red">XX,XX€</span>
+                        </div>
+                        <div class="flex justify-between font-bold text-sm">
+                            <span>Petite (29cm)</span> <span class="text-pizza-red">XX,XX€</span>
+                        </div>
+                        <div class="flex justify-between font-bold text-sm">
+                            <span>Grande (33cm)</span> <span class="text-pizza-red">XX,XX€</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SANDWICHS -->
+                <section class="bg-pizza-yellow p-8 rounded-3xl border-4 border-black shadow-brutal">
+                    <h2 class="font-display text-3xl text-black mb-2 uppercase tracking-tight">Le Sandwich Pizza Orvault</h2>
+                    <p class="font-script text-2xl text-pizza-red mb-4 italic leading-none">Cuit au feu de pierre !</p>
+                    <div class="flex flex-col gap-2 font-bold">
+                        <div class="flex justify-between bg-white/50 p-2 rounded">
+                            <span>Sandwich Seul</span> <span>XX,XX€</span>
+                        </div>
+                        <div class="flex justify-between bg-white/50 p-2 rounded">
+                            <span>Formule Midi (Boisson + Dessert)</span> <span>XX,XX€</span>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="p-4 bg-white/50 border-2 border-dotted border-gray-300 text-xs text-gray-500 font-bold uppercase">
+                    Suppléments ingrédients frais : Champignons, oignons, poivrons, etc (XX,XX€) | Lardons, jambon, fromage, etc (XX,XX€)
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Pied de page & Infos -->
+    <footer id="infos" class="bg-pizza-green text-white py-16 border-t-8 border-pizza-red">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <h2 class="font-display text-5xl tracking-tighter">PIZZA<span class="text-pizza-red">'</span>PAM</h2>
+                    <div class="space-y-4 text-xl">
+                        <p class="flex items-center gap-4"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 170 route de Vannes, 44700 ORVAULT</p>
+                        <p class="flex items-center gap-4 font-bold text-3xl text-pizza-yellow"><i class="fa-solid fa-phone" aria-hidden="true"></i> 02 51 83 00 64</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-2xl border-2 border-white/20">
+                        <h3 class="font-bold text-pizza-yellow uppercase mb-4 tracking-widest text-lg">Horaires de votre pizzeria</h3>
+                        <div class="space-y-2 font-medium">
+                            <div class="flex justify-between border-b border-white/10 pb-1"><span>Mardi au Jeudi</span> <span>11h-14h / 18h-21h30</span></div>
+                            <div class="flex justify-between border-b border-white/10 pb-1"><span>Vendredi & Samedi</span> <span>11h-14h / 18h-22h</span></div>
+                            <div class="flex justify-between text-pizza-red font-bold bg-white/10 px-2 rounded"><span>Dimanche & Lundi</span> <span>Fermé</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Google Maps avec Titre pour SEO Local -->
+                <div class="h-80 rounded-3xl overflow-hidden border-4 border-black shadow-brutal">
+                    <iframe 
+                        title="Localisation Pizza'Pam Orvault"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1354.3400263628042!2d-1.592801452441994!3d47.2407234676644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805ec4d60928685%3A0x9c9f3411a9998ee3!2sPizza&#39;Pam!5e0!3m2!1sfr!2sfr!4v1711488100000!5m2!1sfr!2sfr" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-white/10 text-center text-sm opacity-60">
+                &copy; 2024 Pizza'Pam Orvault - Artisan Pizzaïolo - RC5 Nantes 437 668 460 - Emportez la qualité au meilleur prix
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
